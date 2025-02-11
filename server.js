@@ -20,6 +20,9 @@ const eventRoutes = require("./routes/eventRoutes");
 
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 
 // WebSocket for real-time updates
 io.on("connection", (socket) => {
