@@ -14,7 +14,10 @@ const io = socketIo(server, { cors: { origin: "*" } });
 
 app.use(cors());
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({
+  origin: "https://eventmanagementtanmay.netlify.app/", // Replace with your Netlify URL
+  credentials: true
+}));
 const authRoutes = require("./routes/authRoutes");
 const eventRoutes = require("./routes/eventRoutes");
 
